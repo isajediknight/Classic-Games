@@ -1,0 +1,238 @@
+// Scrolllock is the toggle for hotkeys
+//-----------------------------------------------------------
+// SUBROUTINE TO LAUNCH AND RENAME A COPY OF WOW.
+//-----------------------------------------------------------
+<Command LaunchAndRename>
+   <SendPC %1%>
+      <Run "C:\Program Files (x86)\World of Warcraft\Wow-64.exe">
+      <RenameTargetWin %2%>
+
+//-----------------------------------------------------------
+// Initial window positions
+//-----------------------------------------------------------
+<Command SetF1Pos>
+   <TargetWin WoW1>
+      <SetWinPos 0 0>
+      <SetWinSize 1360 683>
+        <SetForegroundWin>
+        <UpdateWin>
+  <TargetWin WoW2>
+       <SetWinPos 0 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW3>
+       <SetWinPos 151 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW4>
+       <SetWinPos 302 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW5>
+       <SetWinPos 453 683>
+       <SetWinSize 151 85>
+
+
+//-----------------------------------------------------------
+// Shift-alt-L launches all 5 instances and logs in
+//-----------------------------------------------------------
+<Hotkey Alt Ctrl L>
+    <LaunchAndRename Local WoW1>
+       <RemoveWinFrame>
+       <sendpc local>
+       <SendWin "WoW1">
+       <wait 1000>
+        <text E M A I L @ YEA.COM> 
+        <Key Tab>
+        <wait 100>
+        <text P A S S W O R D>
+        <wait 100>
+        <Key Enter> 
+        <wait 1000>
+        <Key Enter>                
+    <LaunchAndRename Local WoW2>
+      <RemoveWinFrame>
+       <sendpc local>
+         <SendWin "WoW2">
+       <wait 1000>
+        <text E M A I L @ YEA.COM>  
+        <Key Tab>
+        <wait 100>
+        <text P A S S W O R D>
+        <wait 300>
+        <Key Enter> 
+        <wait 3000>             
+        <Key Down>
+        <Key Enter> 
+    <LaunchAndRename Local WoW3>
+       <RemoveWinFrame>
+       <sendpc local>
+         <SendWin "WoW3">
+       <wait 1000>
+        <text E M A I L @ YEA.COM>  
+        <Key Tab>
+        <wait 100>
+        <text P A S S W O R D>
+        <wait 300>
+        <Key Enter> 
+        <wait 3000>               
+        <Key Down>
+	<Key Down>
+        <Key Enter>
+    <LaunchAndRename Local WoW4>
+       <RemoveWinFrame>
+       <sendpc local>
+         <SendWin "WoW4">
+       <wait 1000>
+        <text E M A I L @ YEA.COM>  
+        <Key Tab>
+        <wait 100>
+        <text P A S S W O R D>
+        <Key Enter>
+        <wait 3000>
+        <Key Down>
+        <Key Down>
+        <Key Down>
+        <Key Enter>
+    <LaunchAndRename Local WoW5>
+      <RemoveWinFrame>
+       <sendpc local>
+         <SendWin "WoW5">
+       <wait 1000>
+        <text E M A I L @ YEA.COM> 
+        <Key Tab>
+        <wait 100>
+        <text P A S S W O R D>
+        <Key Enter>
+        <wait 3000>
+        <Key Down>
+        <Key Down>
+        <Key Down>
+        <Key Down>
+        <Key Enter>
+
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES.
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 Local SendWinM WoW2>
+<Label w3 Local SendWinM WoW3>
+<Label w4 Local SendWinM WoW4>
+<Label w5 Local SendWinM WoW5>
+
+
+   //-----------------------------------------------------------
+    // DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+    // SENT TO ALL WOWS. ADD MORE KEY COMBO'S IF YOU WANT.
+    //-----------------------------------------------------------
+    <KeyList MyList A-Z, 0-9, Plus, Minus, Space, Period, Oem7, Oem4, Oem6, Tab, Comma, Oem1, F1-F12, Backspace, Ctrl, Enter, Esc, Divide, Capslock, Oem2, Numpad0-Numpad9, except W, A, S, D, Q, E>
+    <Hotkey ScrollLockOn MyList; ScrollLockOn Shift MyList, except F1-F12>
+    <SendLabel w1, w2, w3, w4, w5>
+    <Key %Trigger%>
+     
+    //-----------------------------------------------------------
+    // DEFINE MOVEMENT KEYS THAT WILL GET SENT TO BOTH WOW'S.
+    // ADD MORE KEYS IF YOU WANT.
+    //-----------------------------------------------------------
+    <MovementHotkey ScrollLockOn W, S, A, D, Q, E, Up, Down, Left, Right>
+    <SendLabel w1, w2, w3, w4, w5>
+    <Key %Trigger%>
+     
+    //-----------------------------------------------------------
+    // BROADCAST MOUSE CLICKS. HOLD DOWN OEM3 (ON U.S. KEYBOARDS,
+    // THAT'S THE SQUIGGLE KEY IN UPPPER LEFT CORNER) WHEN YOU
+    // WANT TO BROADCAST.
+    //-----------------------------------------------------------
+    <UseKeyAsModifier Oem3>
+    <Hotkey ScrollLockOn Oem3 LButton, MButton, RButton, Button4, Button5>
+       <SendLabel w1, w2, w3, w4, w5>
+          <ClickMouse %TriggerMainKey%>
+
+
+//------------------------------------------------------------------------
+//Window Shifting
+//------------------------------------------------------------------------
+
+
+
+<Hotkey ScrollLockOn Shift F1>
+  <If ActiveWinIs WoW1>
+  <Else>
+     <SetF1Pos>
+<Hotkey ScrollLockOn Shift F2>
+  <If ActiveWinIs WoW2>
+  <Else>
+  <TargetWin WoW1>
+       <SetWinPos 0 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW3>
+       <SetWinPos 151 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW4>
+       <SetWinPos 302 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW5>
+       <SetWinPos 453 683>
+       <SetWinSize 151 85>
+     <TargetWin WoW2>
+      <SetWinPos 0 0>
+      <SetWinSize 1360 683>
+        <SetForegroundWin>
+        <UpdateWin>
+<Hotkey ScrollLockOn Shift F3>
+  <If ActiveWinIs WoW3>
+  <Else>
+  <TargetWin WoW1>
+       <SetWinPos 0 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW2>
+       <SetWinPos 151 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW4>
+       <SetWinPos 302 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW5>
+       <SetWinPos 453 683>
+       <SetWinSize 151 85>
+     <TargetWin WoW3>
+      <SetWinPos 0 0>
+      <SetWinSize 1360 683>
+        <SetForegroundWin>
+        <UpdateWin>
+<Hotkey ScrollLockOn Shift F4>
+  <If ActiveWinIs WoW4>
+  <Else>
+  <TargetWin WoW1>
+       <SetWinPos 0 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW2>
+       <SetWinPos 151 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW3>
+       <SetWinPos 302 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW5>
+       <SetWinPos 453 683>
+       <SetWinSize 151 85>
+     <TargetWin WoW4>
+      <SetWinPos 0 0>
+      <SetWinSize 1360 683>
+        <SetForegroundWin>
+        <UpdateWin>
+<Hotkey ScrollLockOn Shift F5>
+  <If ActiveWinIs WoW5>
+  <Else>
+  <TargetWin WoW1>
+       <SetWinPos 0 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW2>
+       <SetWinPos 151 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW3>
+       <SetWinPos 302 683>
+       <SetWinSize 151 85>
+  <TargetWin WoW4>
+       <SetWinPos 453 683>
+       <SetWinSize 151 85>
+     <TargetWin WoW5>
+      <SetWinPos 0 0>
+      <SetWinSize 1360 683>
+        <SetForegroundWin>
+        <UpdateWin>

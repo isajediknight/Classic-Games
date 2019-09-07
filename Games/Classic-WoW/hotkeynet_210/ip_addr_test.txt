@@ -1,0 +1,18 @@
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 10.15.225.109 SendWinM WoW2>
+
+//-----------------------------------------------------------
+// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+// SENT TO BOTH WOWS. ADD MORE KEY COMBO'S IF YOU WANT.
+//-----------------------------------------------------------
+
+<MovementHotkey CapsLockOn w, a, s, d>
+	<SendLabel w2>
+	<Key %Trigger%>
+
+<Hotkey CapsLockOn 0-9, Plus, Minus>
+	<SendLabel w2>
+	<Key %Trigger%>

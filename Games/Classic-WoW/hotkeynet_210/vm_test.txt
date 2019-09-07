@@ -1,0 +1,51 @@
+//"C:\Windows\System32\notepad.exe"
+//E:\Games\Blizzard\Burning_Crusade\Burning Crusade\Wow.exe
+// Launch All
+<Command LaunchAndRename1>
+	<SendPC %1%>
+		<Run "E:\Games\Blizzard\Burning_Crusade\Burning Crusade\Wow.exe">
+		<RenameTargetWin %2%>
+
+// Launch All
+<Command LaunchAndRename2>
+	<SendPC %1%>
+		<Run "C:\Program Files (x86)\VMware\VMware Player\vmplayer.exe">
+		<RenameTargetWin %2%>
+
+// Launch and rename
+<Hotkey CapsLockOn Alt Ctrl O>
+	<LaunchAndRename1 local WoW1>
+	<LaunchAndRename2 local WoW2>
+
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 Local SendWinM WoW2>
+
+<Hotkey CapsLockOn ScrollLockOn 1-9>
+	<SendLabel w1, w2>
+		<Key %Trigger%>
+	<sendpc local>
+	<TargetWin "XPX64 - VMware Workstation 12 Player (Non-commercial use only)">
+		<SetSendMode PostMessage>
+		<Key %Trigger%>
+		
+	
+
+<Hotkey NumLockOn ScrollLockOn w, a, s, d>
+	<SendLabel w2>
+	<Key %Trigger%>
+
+<Hotkey NumLockOn ScrollLockOff w, a, s, d>
+	<SendLabel w1>
+	<Key %Trigger%>
+
+<Hotkey NumLockOn CapsLockOn w, a, s, d>
+	<SendLabel w1, w2>
+	<Key %Trigger%>
+
+<hotkey F1>
+   <sendpc local>
+       <TargetWin "My difficult background Window">
+       <SetSendMode PostMessage>

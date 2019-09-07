@@ -1,0 +1,67 @@
+// Launch All
+<Command LaunchAndRename>
+	<SendPC %1%>
+		<Run "E:\Games\Blizzard\Kronos\World of Warcraft 1.12\WoW.exe">
+		<RenameTargetWin %2%>
+
+// Launch and rename
+<Hotkey CapsLockOn Alt Ctrl O>
+	<LaunchAndRename local WoW1>
+	<LaunchAndRename local WoW2>
+
+// Set Position of a window
+<Command PositionAndSize>
+	<TargetWin %1%>
+		<SetWinPos %2% %3%>
+		<SetWinSize %4% %5%>
+
+// WoW1 window layout
+<Hotkey CapsLockOn Alt Ctrl F1>
+	<PositionAndSize WoW1 0 0 1366 768>
+	<PositionAndSize WoW2 1440 0 480 270>
+	<SetTaskbarAutoHide on>
+
+// WoW2 window layout
+<Hotkey CapsLockOn Alt Ctrl F2>
+	<PositionAndSize WoW2 0 0 1366 768>
+	<PositionAndSize WoW1 1440 0 480 270>
+	<SetTaskbarAutoHide on>
+
+// WoW3 window layout
+<Hotkey CapsLockOn Alt Ctrl F3>
+	<PositionAndSize WoW1 0 0 1366 768>
+	<PositionAndSize WoW2 0 810 480 270>
+	<SetTaskbarAutoHide on>
+
+// WoW4 window layout
+<Hotkey CapsLockOn Alt Ctrl F4>
+	<PositionAndSize WoW2 0 0 1366 768>
+	<PositionAndSize WoW1 0 810 480 270>
+	<SetTaskbarAutoHide on>
+
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 Local SendWinM WoW2>
+
+//-----------------------------------------------------------
+// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+// SENT TO BOTH WOWS. ADD MORE KEY COMBO'S IF YOU WANT.
+//-----------------------------------------------------------
+
+<MovementHotkey CapsLockOn w, a, s, d>
+	<SendLabel w2>
+	<Key %Trigger%>
+
+<MovementHotkey ScrollLockOn w, a, s, d>
+	<SendLabel w1>
+	<Key %Trigger%>
+
+// Close Clients
+<Hotkey CapsLockOn Alt Ctrl C>
+	<TargetWin WoW1>
+		<CloseWin>
+	<TargetWin WoW2>
+		<CloseWin>
+	<SetTaskbarAutoHide off>

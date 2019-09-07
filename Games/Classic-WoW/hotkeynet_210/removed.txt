@@ -1,0 +1,5 @@
+// Launch
+<Hotkey ScrollLockOn Alt Ctrl L>
+	<SendPC local>
+		<Run "E:\Games\Blizzard\World of Warcraft\Wow-64.exe">
+		<RenameTargetWin WoW1>

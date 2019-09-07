@@ -1,0 +1,140 @@
+// Launch All
+<Command LaunchAndRename>
+	<SendPC %1%>
+		<Run "E:\Games\Blizzard\World of Warcraft\Wow-64.exe">
+		<RenameTargetWin %2%>
+
+// Launch and rename
+<Hotkey ScrollLockOn Alt Ctrl O>
+	<LaunchAndRename local WoW1>
+		<wait 2000>
+		<text wow1@isajediknight.com>
+		<wait 500>
+		<key Tab>
+		<text PASSWORD>
+		<wait 500>
+		<key enter>
+		<wait 500>
+	<LaunchAndRename local WoW2>
+		<wait 3000>
+		<text wow2@isajediknight.com>
+		<wait 500>
+		<key Tab>
+		<text PASSWORD>
+		<wait 500>
+		<key enter>
+		<wait 500>
+	<LaunchAndRename local WoW3>
+		<wait 3000>
+		<text wow3@isajediknight.com>
+		<wait 500>
+		<key Tab>
+		<text PASSWORD>
+		<wait 500>
+		<key enter>
+		<wait 500>
+	<LaunchAndRename local WoW4>
+		<wait 3000>
+		<text wow4@isajediknight.com>
+		<wait 500>
+		<key Tab>
+		<text PASSWORD>
+		<wait 500>
+		<key enter>
+		<wait 500>
+	<LaunchAndRename local WoW5>
+		<wait 3000>
+		<text wow5@isajediknight.com>
+		<wait 500>
+		<key Tab>
+		<text PASSWORD>
+		<wait 500>
+		<key enter>
+		<wait 500>
+
+// Set Position of a window
+<Command PositionAndSize>
+	<TargetWin %1%>
+		<SetWinPos %2% %3%>
+		<SetWinSize %4% %5%>
+
+// WoW1 window layout
+<Hotkey ScrollLockOn Alt Ctrl F1>
+	<PositionAndSize WoW1 0 0 1920 810>
+	<PositionAndSize WoW2 0 810 480 270>
+	<PositionAndSize WoW3 480 810 480 270>
+	<PositionAndSize WoW4 960 810 480 270>
+	<PositionAndSize WoW5 1440 810 480 270>
+	<SetTaskbarAutoHide on>
+
+// WoW2 window layout
+<Hotkey ScrollLockOn Alt Ctrl F2>
+	<PositionAndSize WoW2 0 0 1920 810>
+	<PositionAndSize WoW1 0 810 480 270>
+	<PositionAndSize WoW3 480 810 480 270>
+	<PositionAndSize WoW4 960 810 480 270>
+	<PositionAndSize WoW5 1440 810 480 270>
+
+// WoW3 window layout
+<Hotkey ScrollLockOn Alt Ctrl F3>
+	<PositionAndSize WoW3 0 0 1920 810>
+	<PositionAndSize WoW2 0 810 480 270>
+	<PositionAndSize WoW1 480 810 480 270>
+	<PositionAndSize WoW4 960 810 480 270>
+	<PositionAndSize WoW5 1440 810 480 270>
+
+// WoW4 window layout
+<Hotkey ScrollLockOn Alt Ctrl F4>
+	<PositionAndSize WoW4 0 0 1920 810>
+	<PositionAndSize WoW2 0 810 480 270>
+	<PositionAndSize WoW3 480 810 480 270>
+	<PositionAndSize WoW1 960 810 480 270>
+	<PositionAndSize WoW5 1440 810 480 270>
+
+// WoW5 window layout
+<Hotkey ScrollLockOn Alt Ctrl F5>
+	<PositionAndSize WoW5 0 0 1920 810>
+	<PositionAndSize WoW2 0 810 480 270>
+	<PositionAndSize WoW3 480 810 480 270>
+	<PositionAndSize WoW4 960 810 480 270>
+	<PositionAndSize WoW1 1440 810 480 270>
+
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 Local SendWinM WoW2>
+<Label w3 Local SendWinM WoW3>
+<Label w4 Local SendWinM WoW4>
+<Label w5 Local SendWinM WoW5>
+
+//-----------------------------------------------------------
+// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+// SENT TO BOTH WOWS. ADD MORE KEY COMBO'S IF YOU WANT. 
+//-----------------------------------------------------------
+
+<MovementHotkey ScrollLockOn w, a, s, d>
+	<SendLabel w1, w2, w3, w4, w5>
+	<Key %Trigger%>
+
+<MovementHotkey CapsLockOn w, a, s, d>
+	<SendLabel w2, w3, w4, w5>
+	<Key %Trigger%>
+
+<Hotkey CapsLockOn 0-9, Plus, Minus, space>
+	<SendLabel w1, w2, w3, w4, w5>
+	<Key %Trigger%>
+
+// Close Clients
+<Hotkey ScrollLockOn Alt Ctrl C>
+	<TargetWin WoW1>
+		<CloseWin>
+	<TargetWin WoW2>
+		<CloseWin>
+	<TargetWin WoW3>
+		<CloseWin>
+	<TargetWin WoW4>
+		<CloseWin>
+	<TargetWin WoW5>
+		<CloseWin>
+	<SetTaskbarAutoHide off>

@@ -1,0 +1,49 @@
+WoW1	Paladin	Achlòphòbia
+WoW1	Mage	Achlòphóbia
+WoW1	Warlock	Achlòphôbia
+WoW1	Shaman	Achlòphõbia
+WoW1	Priest	Achlòphöbia
+WoW1	Warrior	Achlòphobìa
+WoW1	Hunter	Achlòphobía
+WoW1	Druid	Achlòphobîa
+WoW1	Rogue	Achlòphobïa
+
+WoW2	Paladin	Achlóphòbia
+WoW2	Mage	Achlóphóbia
+WoW2	Warlock	Achlóphôbia
+WoW2	Shaman	Achlóphõbia
+WoW2	Priest	Achlóphöbia
+WoW2	Warrior	Achlóphobìa
+WoW2	Hunter	Achlóphobía
+WoW2	Druid	Achlóphobîa
+WoW2	Rogue	Achlóphobïa
+
+WoW3	Paladin	Achlôphòbia
+WoW3	Mage	Achlôphóbia
+WoW3	Warlock	Achlôphôbia
+WoW3	Shaman	Achlôphõbia
+WoW3	Priest	Achlôphöbia
+WoW3	Warrior	Achlôphobìa
+WoW3	Hunter	Achlôphobía
+WoW3	Druid	Achlôphobîa
+WoW3	Rogue	Achlôphobïa
+
+WoW4	Paladin	Achlõphòbia
+WoW4	Mage	Achlõphóbia
+WoW4	Warlock	Achlõphôbia
+WoW4	Shaman	Achlõphõbia
+WoW4	Priest	Achlõphöbia
+WoW4	Warrior	Achlõphobìa
+WoW4	Hunter	Achlõphobía
+WoW4	Druid	Achlõphobîa
+WoW4	Rogue	Achlõphobïa
+
+WoW5	Paladin	Achlöphòbia
+WoW5	Mage	Achlöphóbia
+WoW5	Warlock	Achlöphôbia
+WoW5	Shaman	Achlöphõbia
+WoW5	Priest	Achlöphöbia
+WoW5	Warrior	Achlöphobìa
+WoW5	Hunter	Achlöphobía
+WoW5	Druid	Achlöphobîa
+WoW5	Rogue	Achlöphobïa
