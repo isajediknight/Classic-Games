@@ -1,0 +1,323 @@
+// Defined WoW Lauchers:
+	// ***NOTE: NONE OF THESE ARE CASE SENSITIVE***
+	//
+	// Special keys:
+	// Ctrl-i: send /init to all windows
+	// Ctrl-l: send /reload to all windows
+	// t: BACK UP HUNTERS (feel free to add other toons)
+	// r: BACK UP MELEE
+	// f: MOVE MELEE FORWARD
+	// y: BACK UP HEALERS
+	// h: BACK UP ALL MANA USERS
+	// Alt Ctrl O: Close all windows
+	// 0: party up! Form a party or raid with all your toons.
+	
+	//-----------------------------------------------------------
+	// SUBROUTINE TO LAUNCH AND RENAME A COPY OF WOW.
+	//-----------------------------------------------------------
+	// Arguments:
+	// LaunchAndRename %1<Which PC(always "Local" for us)> %2<Window Name> %3<Account> %4<Password> %5<Winsizex> %6<Winsizey> %7<Winposx> %8<Winposy>
+	
+	<Command LaunchAndRename>
+	   <SendPC %1%>
+   <Run "F:/Downloads/Addons_071819/Wow.exe" -nosound>
+      <RenameTargetWin %2%>  
+	      <WaitForWin %2% 40000>
+	      <WaitForInputIdle 40000>
+	      <Text %3%>
+	      <Key Tab>
+	      <Text %4%>
+	      <TargetWin %2%>
+	      //<RemoveWinFrame>
+	      <SetWinSize %5% %6%>
+	      <SetWinPos %7% %8%>
+	
+	<Command LaunchHiresAndRename>
+	   <SendPC %1%> 
+	      <Run "C:\wow_hires_1.12\WoW.exe" -nosound>
+	      <RenameTargetWin %2%> 
+	      <WaitForWin %2% 40000>
+	      <WaitForInputIdle 40000>
+	      <Text %3%>
+	      <Key Tab>
+	      <WaitForInputIdle 40000>
+	      <Wait 500>
+	      <Text %4%>
+	      <Key Enter>
+	      <Wait 500>
+	      <Key Enter>
+	      <Text %4%>
+	      <Key Enter>
+	      <TargetWin %2%>
+	      <SetWinSize %5% %6%>
+	      <SetWinPos %7% %8%>
+	
+	// ResetWindowPosition %1<Which PC(always "Local" for us)> %2<Window Name> %3<Account> %4<Password> %5<Winsizex> %6<Winsizey> %7<Winposx> %8<Winposy>
+	<Command ResetWindowPosition>
+	   <SendPC %1%> 
+	      <TargetWin %2%>
+	      <SetForegroundWin>
+	      <SetWinSize %5% %6%>
+	      <SetWinPos %7% %8%>
+	
+  <Label w0 Local SendWinM glarnk_1at1>
+  <Label w1 Local SendWinM broink_1at2>
+  <Label w2 Local SendWinM sklerg_1at3>
+  <Label w3 Local SendWinM brunko_1at4>
+  <Label w4 Local SendWinM furykipes_1at5>
+
+
+<Hotkey ScrollLockOn Alt Ctrl m>
+  <if WinDoesNotExist glarnk_1at1>
+  <LaunchAndRename Local glarnk_1at1 acct1 passw 960 720 480 360>
+  <if WinDoesNotExist broink_1at2>
+  <LaunchAndRename Local broink_1at2 acct2 passw 480 360 0 360>
+  <if WinDoesNotExist sklerg_1at3>
+  <LaunchAndRename Local sklerg_1at3 acct3 passw 480 360 480 0>
+  <if WinDoesNotExist brunko_1at4>
+  <LaunchAndRename Local brunko_1at4 acct4 passw 480 360 960 0>
+  <if WinDoesNotExist furykipes_1at5>
+  <LaunchAndRename Local furykipes_1at5 acct5 passw 480 360 1440 360>
+
+<Hotkey ScrollLockOn Shift Ctrl m>
+  <ResetWindowPosition Local glarnk_1at1 acct1 passw 960 720 480 360>
+  <ResetWindowPosition Local broink_1at2 acct2 passw 480 360 0 360>
+  <ResetWindowPosition Local sklerg_1at3 acct3 passw 480 360 480 0>
+  <ResetWindowPosition Local brunko_1at4 acct4 passw 480 360 960 0>
+  <ResetWindowPosition Local furykipes_1at5 acct5 passw 480 360 1440 360>
+
+<Hotkey ScrollLockOn Ctrl i>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key enter>
+	  <Wait 250>
+	  <Key divide>
+	  <Wait 25>
+	  <Text init>
+	  <Wait 175>
+	  <Key enter>
+	
+<Hotkey ScrollLockOn Ctrl l>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key enter>
+	  <Wait 250>
+	  <Key divide>
+	  <Wait 25>
+	  <Text reload>
+	  <Wait 175>
+	  <Key enter>
+	
+<Hotkey ScrollLockOn Alt Ctrl o>
+  <SendLabel w0,w1,w2,w3,w4>
+  <CloseWin>
+	
+<Hotkey ScrollLockOn 0>
+  <SendFocusWin>
+	  <Key 0>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 4>
+
+//-----------------------------------------------------------
+	// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+	// SENT TO BOTH WOWS. ADD MORE KEY COMBO'S IF YOU WANT.
+	//-----------------------------------------------------------
+	<Hotkey ScrollLockOn A-Z, 1-9, Shift, Ctrl, Alt, Plus, Minus, Esc , Space, Tab, Divide, F1-F12 except E,F,Q,H, W, A, S, D, R, T, Y, I, U, J>
+  <SendLabel w0,w1,w2,w3,w4>
+ <Key %Trigger%>
+
+//-----------------------------------------------------------
+	// DEFINE MOVEMENT KEYS THAT WILL GET SENT TO BOTH WOW'S.
+	// ADD MORE KEYS IF YOU WANT.
+	//-----------------------------------------------------------
+	<MovementHotkey ScrollLockOn up, down, left, right,e,q>
+  <SendLabel w0,w1,w2,w3,w4>
+ <Key %Trigger%>
+
+//-----------------------------------------------------------
+	// BROADCAST MOUSE CLICKS. HOLD DOWN oem3 (ON U.S. KEYBOARDS,
+	// THAT'S THE SQUIGGLE KEY IN UPPPER LEFT CORNER) WHEN YOU
+	// WANT TO BROADCAST. oem5 on euro kbs.
+	//-----------------------------------------------------------
+<UseKeyAsModifier oem3>
+
+<Hotkey ScrollLockOn oem3 LButton, RButton, Button4, Button5>
+  <SendLabel w0,w1,w2,w3,w4>
+      <ClickMouse %TriggerMainKey%>
+<Hotkey ScrollLockOn Alt 1>
+	<SendFocusWin> 
+	  <Key f10>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 1> 
+	<Hotkey ScrollLockOn Alt 2>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 2> 
+	<Hotkey ScrollLockOn Alt 3>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 3> 
+	<Hotkey ScrollLockOn Alt 4>
+	<SendFocusWin> 
+	  <Key f10>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 4>
+	<Hotkey ScrollLockOn Alt 5>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 5> 
+	<Hotkey ScrollLockOn Alt 6>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 6> 
+	<Hotkey ScrollLockOn Alt 7>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 7> 
+	<Hotkey ScrollLockOn Alt 8>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 8> 
+	<Hotkey ScrollLockOn Alt 9>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 9> 
+	<Hotkey ScrollLockOn Alt 0>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt 0> 
+	<Hotkey ScrollLockOn Alt Plus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt Plus> 
+	<Hotkey ScrollLockOn Alt Minus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt Minus> 
+	<Hotkey ScrollLockOn Ctrl Alt 1>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl Alt 1>
+	<Hotkey ScrollLockOn Alt F1>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Alt F1>
+	<Hotkey ScrollLockOn Ctrl 1>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 1>
+	<Hotkey ScrollLockOn Ctrl 2> 
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 2> 
+	<Hotkey ScrollLockOn Ctrl 3>
+	<SendFocusWin> 
+	  <Key Ctrl 3> 
+	<Hotkey ScrollLockOn Ctrl 4>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 4> 
+	<Hotkey ScrollLockOn Ctrl 5>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 5> 
+	<Hotkey ScrollLockOn Ctrl 6>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 6> 
+	<Hotkey ScrollLockOn Ctrl 7>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 7> 
+	<Hotkey ScrollLockOn Ctrl 8>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 8> 
+	<Hotkey ScrollLockOn Ctrl 9>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 9> 
+	<Hotkey ScrollLockOn Ctrl 0>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl 0> 
+	<Hotkey ScrollLockOn Ctrl Plus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl Plus> 
+	<Hotkey ScrollLockOn Ctrl Minus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Ctrl Minus> 
+	<Hotkey ScrollLockOn Shift 1>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 1>
+	<Hotkey ScrollLockOn Shift 2>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 2> 
+	<Hotkey ScrollLockOn Shift 3>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 3> 
+	<Hotkey ScrollLockOn Shift 4>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 4> 
+	<Hotkey ScrollLockOn Shift 5>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 5> 
+	<Hotkey ScrollLockOn Shift 6>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 6> 
+	<Hotkey ScrollLockOn Shift 7>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 7> 
+	<Hotkey ScrollLockOn Shift 8>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 8> 
+	<Hotkey ScrollLockOn Shift 9>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 9> 
+	<Hotkey ScrollLockOn Shift 0>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift 0> 
+	<Hotkey ScrollLockOn Shift Plus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift Plus> 
+	<Hotkey ScrollLockOn Shift Minus>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift Minus> 
+	<Hotkey ScrollLockOn Shift F1>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F1>
+	<Hotkey ScrollLockOn Shift F2>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F2> 
+	<Hotkey ScrollLockOn Shift F3>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F3> 
+	<Hotkey ScrollLockOn Shift F4>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F4> 
+	<Hotkey ScrollLockOn Shift F5>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F5> 
+	<Hotkey ScrollLockOn Shift F6>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F6> 
+	<Hotkey ScrollLockOn Shift F7>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F7> 
+	<Hotkey ScrollLockOn Shift F8>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F8> 
+	<Hotkey ScrollLockOn Shift F9>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F9> 
+	<Hotkey ScrollLockOn Shift F10>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F10> 
+	<Hotkey ScrollLockOn Shift F11>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F11> 
+	<Hotkey ScrollLockOn Shift F12>
+  <SendLabel w0,w1,w2,w3,w4>
+  <Key Shift F12> 
+
+//Hunter backup
+<MovementHotkey ScrollLockOn T>
+<Sendlabel w2>
+  <Key Down>
+
+//Melee backup
+<MovementHotkey ScrollLockOn R>
+<Sendlabel w0,w3>
+  <Key Down>
+
+//Melee forward
+<MovementHotkey ScrollLockOn F>
+<Sendlabel w3>
+  <Key Up>
+
+//Healer backup
+<MovementHotkey ScrollLockOn Y>
+<Sendlabel w4>
+  <Key Down>
+
+//Mana backup
+<MovementHotkey ScrollLockOn H>
+<Sendlabel w1,w4>
+  <Key Down>
