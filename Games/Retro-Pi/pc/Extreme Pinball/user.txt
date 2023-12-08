@@ -1,0 +1,88 @@
+* The *'s indicate that the line is a comment when the * is 
+* the first character on the line.
+*
+* DEFAULTS ARE AS FOLLOWS:
+*
+* ACCELERATION = 0.019532
+*   Rate of acceleration of ball
+*
+* BALL_VMAXX = 4
+*   Maximum velocity of a ball in the x (horizontal) direction
+*
+* BALL_VMAXY = 6.666666
+*   Maximum velocity of a ball in the y (vertical) direction
+*
+* NORMALDAMPING = 0.75
+
+
+NORMALDAMPING = 0.65
+
+
+* NORMALDAMPING_X = 1.0
+* NORMALDAMPING_Y = 1.0
+*   Coefficient of velocity retention during a collision with wall pixel.
+*   or (stationary) flipper  (_X & _Y allows tweaking if necessary)
+*
+* FLIPPERNORMAL_X = 1.0
+* FLIPPERNORMAL_Y = 1.0
+*
+*   Allows tweaking of the normal of a flipper impact.
+*
+* FLIPPERVELOCITY_X = 1.0
+* FLIPPERVELOCITY_Y = 1.0
+*   Allows tweaking of change in velocity due to flipper impact.
+*
+* INTERELASTICITY = 0.610351 
+*   Coefficient of velocity retention during a collision with another ball.
+*
+* WEIGHT_NEW = 1
+* WEIGHT_OLD = 5
+*   The ratio WEIGHT_NEW : WEIGHT_OLD determines how far the scrolling
+*   mechanism scrolls.  Moves WEIGHT_NEW of (WEIGHT_NEW + WEIGHT_OLD) 
+*   parts of the way from the old scroll position to the new scroll 
+*   position. 
+*   Actual position is calculated as follows:
+*      ROW_NEW = (ROW_NEW * WEIGHT_NEW + ROW_OLD * WEIGHT_OLD) 
+*                / (WEIGHT_NEW + WEIGHT_OLD)
+*
+* SCROLL_MAX = 20
+*   The maximum number of rows the table image is allowed to scroll
+*   in one redraw.
+*
+* PLUNGER_MAX_VELOCITY = 6.666666
+*   Velocity of the ball after plunger impacts from maximum displacement
+*
+* NUDGE_STRENGTH = 1.5
+*   Velocity change of the ball during a table nudge
+*
+* NUDGE_SENSITIVITY = 1
+*   Amount of agitation nudge sensor receives during a table nudge
+*
+* NUDGE_TOLERANCE = 4.6875
+*   Maximum amount of nudge
+*
+* NUDGE_DECAY = 0.010406
+*   Time of nudge
+*
+* MUSIC_VOLUME = 127
+*   Master volume level for music (0..127)
+*
+* SAMPLE_VOLUME = 127
+*   Master volume level for sound effects  (0..127)
+*
+
+BALL_VMAXY = 7.5
+PLUNGER_MAX_VELOCITY = 7.5
+
+NUDGE_TOLERANCE = 9.0
+NUDGE_DECAY = 0.03
+
+*MUSIC_VOLUME = 255
+MUSIC_VOLUME = 90
+*MUSIC_VOLUME = 0
+
+SAMPLE_VOLUME = 255
+*SAMPLE_VOLUME = 0
+
+NUMBALLS = 3
+

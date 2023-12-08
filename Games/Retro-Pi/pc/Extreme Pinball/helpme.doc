@@ -1,0 +1,194 @@
+=============================================================================
+                            Extreme Pinball v1.0
+                                Full Version
+
+        Copyright 1995 Digital Extremes, Inc. and Epic MegaGames, Inc.
+=============================================================================
+		    * Instructions/Troubleshooting Info *
+=============================================================================
+
+Extreme Pinball requires:
+  þ A 386-33MHz or faster IBM-compatible PC (486-66 recommended)
+  þ VGA graphics
+  þ 4 Megabytes of RAM
+  þ 450K of conventional memory available
+
+Also supports:
+  þ Sound Blaster, Sound Blaster Pro, Sound Blaster 16,
+    Gravis Ultrasound, and 100% compatible music cards.
+  þ Joystick
+
+Version History
+---------------
+  þ 1.0 - First release of Extreme Pinball
+
+To start Extreme Pinball from CD-Rom
+------------------------------------
+
+  1. Switch to your CD-Rom drive (D: or E:).
+  3. Type EXTREME to play.
+
+To start Extreme Pinball from the hard disk
+-------------------------------------------
+
+If you selected "Full installation" when installing the Extreme
+Pinball CD-Rom, here's how to play from the hard disk:
+
+  1. Switch to the drive where the game is installed (C:)
+  2. Switch to the subdirectory where the game is installed (CD \EXTREME)
+  3. Type EXTREME to play.
+
+
+=============================================================================
+		      Common problems and solutions
+=============================================================================
+
+Running with Windows
+---------------------
+
+Extreme Pinball does not run reliably under Windows 3.0 or 3.1 with sound
+on.  Please run SETUP from DOS and select "No Sound Card" if you
+need to run Extreme Pinball from older versions of Windows.  If you
+still have problems, exit Windows and run Extreme Pinball from DOS.
+
+Extreme Pinball should work under Windows 95 on most computers.  However,
+if you have any problems running under Windows 95, you'll have to run
+it from MS-DOS Mode instead.
+
+Note: Under Windows 95, Extreme Pinball won't run quite as smoothly
+      as under DOS.  You may notice the screen flickering from time
+      to time.  Though this shouldn't affect gameplay, if you prefer
+      total smoothness, we recommend running from MS-DOS mode.
+
+Running with OS/2
+-----------------
+
+Though Extreme Pinball may work reliably under OS/2 on some computers, we
+don't recommend this because it might result in the game locking up.
+Please run through DOS, instead.
+
+Running on 4-megabyte machines
+------------------------------
+
+Extreme Pinball takes up nearly 4 megabytes of memory.  It will
+run on 4-meg machines, but only if you don't have other device
+drivers or memory managers loaded.
+
+If Extreme refuses to run, and you have a 4-meg machine, install
+it to your hard disk (by running Setup and choosing "Full install").
+Then, boot clean and run Extreme from the hard drive.  This usually
+solves the problem because CD-Rom device drivers take up a lot of
+memory and may prevent Extreme from running on 4-meg machines.
+
+=============================================================================
+		      HOW TO BOOT YOUR COMPUTER CLEAN
+=============================================================================
+			    
+If you're having problems running Extreme Pinball, you might be able to get
+it up and running by "Booting your computer clean."  By this, we mean
+starting your computer without loading all of the memory managers and device
+drivers that might interfere with the game.  It's a relatively simple process,
+so please bear with us.
+
+=============================================================================
+                        Booting your computer clean
+=============================================================================
+
+Reboot your computer by pressing RESET or Ctrl-Alt-Del.  Wait for the
+message "Starting MS-DOS..." to come up.  Now press the [F5] key.
+
+This will cause DOS 6.0 to bypass all of your TSR's, memory managers,
+and other programs which normally occupy main memory.
+
+Now change into the EXTREME directory and begin the game.
+
+=============================================================================
+			  GENERAL QUESTIONS & ANSWERS
+=============================================================================
+
+Q: When I run Extreme,  the computer locks up or reboots.
+A: Run SETUP and verify that your settings are correct. If you are
+   not using a sound card, make sure that SETUP is set for "No Sound Card".
+   If you are using a sound card, verify that your sound card has no
+   address, IRQ, or DMA conflicts with other peripherals in your system.
+   If your sound card works properly with other games, you can assume that
+   there are no conflicts.  However, if your sound card does not work with
+   other games, you have a conflict.  See your sound card manual
+   for details on fixing this.
+
+Q: Extreme runs slowly on my 386 or 486 computer.  What can I do?
+A: Your computer or VGA card isn't as fast as the game would like.
+   If you're running through Windows, try running Extreme Pinball
+   from DOS instead.
+
+Q: While playing, I get dumped back to DOS with an error message. 
+A: This means that either (1) Extreme is conflicting with your memory
+   managers and TSR's, or (2) you need more free memory to run Extreme.
+   Try booting clean.
+
+Q: I can't seem to get anything on the screen.  I type Extreme and the system
+   "hangs".  What now?
+A: Make sure you have the system requirements mentioned earlier in the
+   manual. If you do, you may have TSR's that conflict with Extreme. Remove
+   the TSR's and try running Extreme with a "clean boot" from a DOS
+   diskette.  Also try running Extreme without sound, to determine if there
+   is a sound-related conflict.
+
+=============================================================================
+			     SOUND CARD NOTES
+=============================================================================
+
+   Since new models of sound cards are always being manufactured and revised,
+   sometimes a new sound card will come out that's not compatible with
+   Extreme Pinball.  To determine whether you are having a sound-related
+   conflict, try setting up Extreme Pinball for "No Sound Card."  If the
+   game works without sound, but locks up with sound on, chances are that you
+   are having a sound-related conflict.
+
+   Here's how to contact the top sound card makers for information about
+   sound card problems and obtaining the latest driver files.
+
+   Company       Sound Card         Phone        BBS           CompuServe GO
+   ------------- ------------------ ------------ ------------  -------------
+   Media Vision  Pro Audio Spectrum 800-638-2807 510-770-0527  MultiVen (12)
+   Creative Labs Sound Blaster      405-742-6622 405-742-6660  Blaster 
+   Gravis        Ultrasound         604-431-1708 604-431-5927  PcVenB (14)
+
+
+=============================================================================
+                        CONTACTING EPIC'S TECH SUPPORT
+=============================================================================
+
+If you need further assistance, please call our tech support department:
+
+In the USA:      voice: 301-983-9771          fax: 301-299-3841
+In the Europe:   voice: +44 (0) 1767-260903   fax: +44 (0) 1737-262043
+In Germany:      voice: 0130 822887           fax: 0130 822886
+
+
+You can also contact us online:
+
+WorldWide Web:  http://www.epicgames.com/
+CompuServe:     GO EPIC
+Internet Mail:  help@epicgames.com
+Internet FTP:   ftp.uml.edu
+Internet News:  We answer questions in comp.sys.ibm.pc.games.action
+America Online: We answer questions posted in the PCGames (keyword) area
+MicroSoft Network: We answer questions in the Computer Game Forum
+GEnie:          We answer questions in the Games Roundtable
+
+
+EXEC-PC BBS
+   Contact:     Epic MegaGames
+   2400 Baud:   414-789-4210
+   14.4K Baud:  414-789-4360
+   
+=============================================================================
+
+Epic's Email list:
+   
+To subscribe to Epic's email list and receive late-breaking news 
+from Epic every month or so, just send an Internet message to
+list@epicgames.com with the subject: SUBSCRIBE EPIC
+
+=============================================================================
